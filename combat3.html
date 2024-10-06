@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/combat.css">
+    <title>combat2</title>
+</head>
+
+<body>
+    <a href="home.html" id="homeIcon">
+        <img src="./img/home-icon.png" alt="Home Icon">
+    </a>
+    <div id="answer-game-container">
+        <div id="left"> <!-- 左邊的 div，佔 70 -->
+            <div id="canvas-container">
+                <canvas></canvas>
+                <div id="player-status-container">
+                    <div class="character-name">Hero</div>
+                    <div id="player-health-bar">
+                        <div id="player-health"></div>
+                    </div>
+                </div>
+                <div id="enemy-status-container">
+                    <div class="character-name">Enemy</div>
+                    <div id="enemy-health-bar">
+                        <div id="enemy-health"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- 題目選項區域 -->
+            <div id="options-container"></div>
+        </div>
+        <div id="right"> <!-- 右邊的 div，佔 30% -->
+            <div id="question"></div>
+                <div id="dialogueBox"></div>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"
+            integrity="sha512-6+YN/9o9BWrk6wSfGxQGpt3EUK6XeHi6yeHV+TYD2GR0Sj/cggRpXr1BrAQf0as6XslxomMUxXp2vIl+fv0QRA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"
+            integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="data/audio.js"></script>
+        <script src="data/questions3.js"></script>
+        <script src="data/attacks.js"></script>
+        <script src="data/characters.js"></script>
+        <script src="classes.js"></script>
+        <script src="combat3.js"></script>
+</body>
+
+</html>
