@@ -55,7 +55,7 @@ function bindButtonListeners() {
 					document.querySelector("#dialogueBox").innerHTML =
 						"Congrats! You're right<br>You will be sent to next challenge in few seconds ...";
 					setTimeout(function () {
-						window.location.href = "home.html"; // 3 秒後跳轉到指定頁面
+						window.location.href = "index.html"; // 3 秒後跳轉到指定頁面
 					}, 3000);
 				}
 
