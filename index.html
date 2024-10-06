@@ -1,35 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PACE Explorer</title>
     <link rel="stylesheet" href="./styles/index.css">
 </head>
+
 <body>
     <!-- Navbar -->
     <div class="navbar">
         <div class="title">PACE Explorer</div>
         <div class="nav-links">
-            <a href="about.html">About Us</a>
-            <a href="pace.html">PACE</a>
+            <a href="guide.html">Guide for teachers</a>
         </div>
     </div>
 
     <!-- Main container for the map -->
     <div class="map-container">
+        <!-- NPC with dialogue box -->
+        <div class="npc-container">
+            <img src="./img/captain.png" alt="Captain NPC" class="npc-image">
+            <div class="dialogue-box" id="dialogueBox">
+                <p id="npcDialogue">Welcome, brave sailor! The time has come to set sail on a grand expedition across the universe. Your journey begins here, where you will explore the vast mysteries of space and uncover secrets hidden deep within the atmosphere and oceans of distant planets. NASA's PACE mission has provided us with powerful tools, and now, it's up to you to use them.</p>
+                <button id="prevButton" onclick="prevDialogue()">Prev</button>
+                <button id="nextButton" onclick="nextDialogue()">Next</button>
+            </div>
+        </div>
+
+        <!-- Island Names -->
+        <p class="island-name" id="island1-name">Algae Island</p>
+        <p class="island-name" id="island2-name">NASA’s Instruments Island</p>
+        <p class="island-name" id="island3-name">Aerosol Island</p>
+        <p class="island-name" id="island4-name">Ship of Creation(DALL E)</p>
+
         <!-- Island 1 -->
         <a href="island1.html" class="island" id="island1"></a>
-        
+
         <!-- Island 2 -->
         <a href="island2.html" class="island" id="island2"></a>
-        
+
         <!-- Island 3 -->
         <a href="island3.html" class="island" id="island3"></a>
-        
+
         <!-- Ship -->
         <a href="ship.html" class="ship"></a>
     </div>
     <script src="index.js"></script>
 </body>
+
 </html>

@@ -58,21 +58,21 @@ body {
 
 #island1 {
     background-image: url('../img/home/island1.png');
-    top: 20%;
-    left: 10%;
+    top: 30%;
+    left: 20%;
     transform: scale(3); /* 放大 1.5 倍 */
 }
 
 #island2 {
     background-image: url('../img/home/island2.png');
     bottom: 70%;
-    left: 40%;
+    left: 50%;
     transform: scale(2.5); /* 放大 1.5 倍 */
 }
 
 #island3 {
     background-image: url('../img/home/island3.png');
-    top: 20%;
+    top: 25%;
     right: 10%;
     transform: scale(3); /* 放大 1.5 倍 */
 }
@@ -85,7 +85,96 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
     cursor: pointer;
-    bottom: 30%;
-    right: 30%;
+    bottom: 15%;
+    right: 28%;
     transform: scale(3); /* 放大 1.5 倍 */
+}
+
+/* Position NPC at the bottom-left corner */
+.npc-container {
+    position: absolute;
+    bottom: 10px;
+    left: 50px;
+    display: flex;
+    align-items: center;
+}
+
+/* NPC image style */
+.npc-image {
+    width: 100px;
+    height: auto;
+    transform: scale(2); /* 放大 1.5 倍 */
+}
+
+/* Dialogue box style */
+.dialogue-box {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 2px solid #333;
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: 70px;
+    position: relative;
+    width: 450px;
+    height: 200px;
+}
+
+/* Dialogue text */
+#npcDialogue {
+    margin: 0;
+}
+
+/* Next button */
+#nextButton {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    right: 5%;
+    bottom: 5px;
+}
+#prevButton {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    right: 20%;
+    bottom: 5px;
+}
+
+/* Island Name Styles */
+.island-name {
+    position: absolute;
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* Positioning Island Names */
+#island1-name {
+    top: 58%; /* Adjust as needed */
+    left: 18%;
+}
+
+#island2-name {
+    bottom: 53%; /* Adjust as needed */
+    left: 44%;
+}
+
+#island3-name {
+    top: 50%; /* Adjust as needed */
+    right: 8%;
+}
+
+#island4-name {
+    top: 70%; /* Adjust as needed */
+    right: 3%;
 }
