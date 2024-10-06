@@ -3,27 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DALL-E Image Generator</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Image Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        input[type="text"] {
+            width: 60%;
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+
+        .result {
+            margin-top: 20px;
+        }
+
+        img {
+            max-width: 80%;
+            height: auto;
+        }
+
+        .prompt-display {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
-    <div class="container mt-5">
-        <h1 class="text-center">DALL-E Image Generator</h1>
-        <form method="POST" action="/generate_image">
-            <div class="form-group">
-                <label for="prompt">Enter a prompt to generate an image:</label>
-                <input type="text" id="prompt" name="prompt" class="form-control" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Generate Image</button>
-        </form>
-        <div id="imageResult" class="mt-5">
-            {% if image_url %}
-                <h3 class="text-center">Generated Image</h3>
-                <div class="text-center">
-                    <img src="{{ image_url }}" alt="Generated Image" class="img-fluid">
-                </div>
-            {% endif %}
+    <div class="container">
+        <h1>AI Image Generator</h1>
+        <p>Enter a description for your image:</p>
+        <input type="text" id="prompt" placeholder="Enter your image prompt">
+        <br>
+        <button onclick="generateImage()">Generate Image</button>
+        
+        <div class="result">
+            <img id="generatedImage" src="" alt="Generated Image" style="display:none;">
+            <div class="prompt-display" id="promptDisplay"></div>
         </div>
     </div>
+
+    <script>
+        async function generateImage() {
+            const prompt = document.getElementById("prompt").value;
+
+            // 确保用户输入了prompt
+            if (!prompt) {
+                alert("Please enter a prompt.");
+                return;
+            }
+
+            const response = await fetch("/generate-image", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ prompt })
+            });
+
+            const data = await response.json();
+
+            // 如果有错误，处理错误
+            if (data.error) {
+                alert(data.error);
+                return;
+            }
+
+            // 显示生成的图片和 prompt
+            const generatedImage = document.getElementById("generatedImage");
+            const promptDisplay = document.getElementById("promptDisplay");
+
+            generatedImage.src = data.image_local;  // 从本地读取图像
+            generatedImage.style.display = "block";
+            promptDisplay.textContent = "Prompt: " + data.prompt;
+        }
+    </script>
 </body>
 </html>
